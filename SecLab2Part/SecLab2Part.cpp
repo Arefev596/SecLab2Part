@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 int sizeStack = 0;
@@ -40,6 +40,7 @@ void FindStack(st* s, int findItem) {
 	{
 		if (s->Items[i] == findItem) {
 			cout << "\nНужный элемент " << findItem << " найден!\n";
+			cout << "Для этого понадобилось " << i+1 << " операций";
 			YesOrNo = true;
 			break;
 		}
@@ -52,7 +53,7 @@ void FindStack(st* s, int findItem) {
 void PrintStack(st* s) {
 	cout << "Наши элементы стека: \n";
 	for (int i = 0; i < N; i++) {
-		cout << s->Items[i] << " ";
+		cout << i << " "<< s->Items[i] << "\n";
 	}
 	cout << endl;
 }
@@ -118,7 +119,7 @@ public:
 	void PrintQueue() {
 		cout << "Наши элементы очереди: ";
 		for (int i = first; i <= last; i++) {
-			cout << items[i] << "  ";
+			cout << i <<" " << items[i] << " \n ";
 		}
 	}
 
@@ -128,6 +129,7 @@ public:
 			if (items[i] == whatfind) {
 				cout << "\nНужный элемент " << whatfind << " найден!\n";
 				YesOrNo = true;
+				cout << "Для этого понадобилось " << i+1 << " операций";
 				break;
 			}
 		}
@@ -178,13 +180,14 @@ int main() {
 		cout << "Наши элементы массива: \n";
 		for (int i = N - 1; i > -1; i--)
 		{
-			cout << mas[i] << " ";
+			cout << i << " " << mas[i] << "\n ";
 		}
 
 		for (int i = 0; i < N; i++)
 		{
 			if (mas[i] = elem) {
 				cout << "\nНужный элемент " << elem << " найден!\n";
+				cout << "Для этого понадобилось " << i+1 << " операций";
 				break;
 			}
 			else {
@@ -209,5 +212,3 @@ int main() {
 	}
 
 	return 0;
-
-}
